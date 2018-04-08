@@ -35,11 +35,25 @@ function searchForm(){
       $(search_form).on('submit', (event) => {
         event.preventDefault();
          alert('f');
-      });
-  
-  
+         if (search_text.val().length > 2) {
+          // $(results_content).text("Buscando..")
+          loadJSON(URL, (response) => {
+            const resultData = _.filter(response.data, (item) => item.title.toLowerCase().indexOf(search_text.val().toLowerCase()) != -1);
+            const results = resultData.map((result, index) => {
+              if (index < 9) {
+                return `<div class="pure-u-7-24">
+                          <img class="pure-img" src="${result.image}">
+                          <h2>${result.title}</h2>
+                          <p>${result.teaser}</p>
+                        </div>`;
+              }
+            });
+            $(results_content).html(results);
+          });
+        }
+        });
      
-     
+  
 
     });
       
