@@ -34,7 +34,7 @@ function searchForm(){
       //buscador
       $(search_form).on('submit', (event) => {
         event.preventDefault();
-         alert('f');
+        //  alert('f');
          if (search_text.val().length > 2) {
           // $(results_content).text("Buscando..")
           loadJSON(URL, (response) => {
