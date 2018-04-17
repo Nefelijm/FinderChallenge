@@ -24,11 +24,10 @@ function searchForm(){
         };
         
         //recorriendo la data
-        const list = response.data.map((item) => item.title);
+        const listaa = response.data.map((item) => item.title);
           
           awesomplete = new Awesomplete(search_form_field, awesompleteOptions);
-          awesomplete.list = list;
-        
+          awesomplete.list = listaa;        
         })
     
       //buscador
@@ -38,7 +37,7 @@ function searchForm(){
          if (search_text.val().length > 2) {
           // $(results_content).text("Buscando..")
           loadJSON(URL, (response) => {
-            const resultData = _.filter(response.data, (item) => item.title.toLowerCase().indexOf(search_text.val().toLowerCase()) != -1);
+            const resultData =_.filter(response.data, (item) => item.title.toLowerCase().indexOf(search_text.val().toLowerCase()) != -1);
             const results = resultData.map((result, index) => {
               if (index < 9) {
                 return `<div class="pure-u-7-24">

@@ -9,7 +9,7 @@
   "keywords": [
     "challenge"
   ],
-  "homepage": "",
+  "homepage":"",
   "private": true,
   "ignore": [
     "**/.*",
